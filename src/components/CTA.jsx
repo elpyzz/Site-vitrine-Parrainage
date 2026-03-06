@@ -29,7 +29,7 @@ const CTA = () => {
 
           {/* Instagram Button */}
           <motion.a
-            href="https://www.instagram.com/mureza_aep/"
+            href="https://www.instagram.com/louispereira.exee/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -37,7 +37,7 @@ const CTA = () => {
             className="inline-flex items-center gap-3 bg-white text-primary px-8 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-white/20 transition-all group"
           >
             <Instagram size={28} className="text-primary" />
-            <span>@mureza_aep</span>
+            <span>@louispereira.exee</span>
             <Send size={20} className="text-primary group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
