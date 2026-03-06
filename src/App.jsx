@@ -1,34 +1,19 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import TrustBar from './components/TrustBar'
-import HowItWorks from './components/HowItWorks'
-import DiscoverApp from './components/DiscoverApp'
-import WhyArtisanLoves from './components/WhyArtisanLoves'
-import Benefits from './components/Benefits'
-import Simulation from './components/Simulation'
-import Testimonials from './components/Testimonials'
-import HowToTalk from './components/HowToTalk'
-import FAQ from './components/FAQ'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import MentionsLegales from './pages/MentionsLegales'
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
+import ConditionsProgramme from './pages/ConditionsProgramme'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <Hero />
-      <TrustBar />
-      <HowItWorks />
-      <DiscoverApp />
-      <WhyArtisanLoves />
-      <Benefits />
-      <Simulation />
-      <Testimonials />
-      <HowToTalk />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mentions-legales" element={<MentionsLegales />} />
+        <Route path="/confidentialite" element={<PolitiqueConfidentialite />} />
+        <Route path="/conditions" element={<ConditionsProgramme />} />
+      </Routes>
+    </Router>
   )
 }
 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -73,9 +74,19 @@ const Footer = () => {
             <h3 className="font-semibold text-white mb-4">Informations</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link to="/mentions-legales" className="hover:text-white transition-colors">
                   Mentions légales
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/confidentialite" className="hover:text-white transition-colors">
+                  Politique de confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link to="/conditions" className="hover:text-white transition-colors">
+                  Conditions du programme
+                </Link>
               </li>
               <li>
                 <a href="#cta" className="hover:text-white transition-colors">
