@@ -41,6 +41,23 @@ Les liens sont déjà configurés :
 - **Instagram** : `https://www.instagram.com/mureza_aep/`
 - **Application** : `https://www.aosrenovbtp.fr/`
 
+### Ajouter les captures d'écran du logiciel
+
+Pour afficher les 5 captures d'écran dans la section "Ce que l'artisan découvrira", placez les images dans le dossier `public/images/` avec les noms suivants :
+
+1. `generateur-devis.jpg` - Générateur de Devis
+2. `estimation-photo.jpg` - Estimation Automatique des Chantiers
+3. `dossiers.jpg` - Gestion des Dossiers
+4. `dashboard.jpg` - Tableau de Bord
+5. `planning.jpg` - Planning des Chantiers
+
+**Format recommandé :**
+- Format : JPG ou PNG
+- Taille : 1920x1080px minimum (ratio 16:10)
+- Poids : < 500KB par image
+
+Les images seront affichées dans un carousel interactif avec navigation par flèches et miniatures.
+
 ## 📱 Sections
 
 1. **Navbar** - Navigation sticky avec lien "L'application" et animation au scroll

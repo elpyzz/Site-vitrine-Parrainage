@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion'
-import { FileText, Receipt, Send, Calendar, ArrowRight, Camera, ExternalLink, Star } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FileText, Receipt, Send, Calendar, ArrowRight, Camera, ExternalLink, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState } from 'react'
 
 const DiscoverApp = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
   const features = [
     {
       icon: FileText,
@@ -40,6 +43,47 @@ const DiscoverApp = () => {
       exclusive: true
     }
   ]
+
+  // Fonction pour encoder les URLs avec espaces
+  const getImagePath = (filename) => {
+    return `/images/${encodeURIComponent(filename)}`
+  }
+
+  const screenshots = [
+    {
+      src: getImagePath('Numéro 1.jpg'),
+      alt: 'Générateur de Devis - Créez des devis professionnels conformes BTP',
+      title: 'Générateur de Devis'
+    },
+    {
+      src: getImagePath('Numéro 2.jpg'),
+      alt: 'Estimation Automatique des Chantiers - Estimation via photo',
+      title: 'Estimation via Photo'
+    },
+    {
+      src: getImagePath('Numéro 3.jpg'),
+      alt: 'Dossiers - Gérez tous vos devis et factures',
+      title: 'Gestion des Dossiers'
+    },
+    {
+      src: getImagePath('Numéro 5.jpg'),
+      alt: 'Dashboard - Vue d\'ensemble de votre activité',
+      title: 'Tableau de Bord'
+    },
+    {
+      src: getImagePath('Numéro 6.jpg'),
+      alt: 'Planning des Chantiers - Calendrier intégré pour organiser vos interventions',
+      title: 'Planning des Chantiers'
+    }
+  ]
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % screenshots.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + screenshots.length) % screenshots.length)
+  }
 
   const containerVariants = {
     initial: {},
@@ -125,7 +169,7 @@ const DiscoverApp = () => {
             })}
           </motion.div>
 
-          {/* Right: Logiciel Mockup */}
+          {/* Right: Screenshots Gallery */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -133,22 +177,98 @@ const DiscoverApp = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 lg:p-12 aspect-[4/3] flex items-center justify-center border-2 border-primary/20">
-              <div className="text-center">
-                <div className="text-6xl lg:text-7xl font-bold text-primary/30 mb-4">
-                  Aos Renov
+            {/* Main Image Display */}
+            <div className="relative bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-4 lg:p-6 border-2 border-primary/20 overflow-hidden">
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-gray-900 shadow-2xl">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageIndex}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full h-full relative"
+                  >
+                    <img
+                      src={screenshots[currentImageIndex].src}
+                      alt={screenshots[currentImageIndex].alt}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none'
+                        const fallback = e.target.nextElementSibling
+                        if (fallback) fallback.style.display = 'flex'
+                      }}
+                    />
+                    <div 
+                      className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20 text-gray-300 absolute inset-0"
+                    >
+                      <div className="text-center p-8">
+                        <div className="text-5xl font-bold text-primary/40 mb-3">Aos Renov</div>
+                        <div className="text-xl font-semibold text-white mb-2">{screenshots[currentImageIndex].title}</div>
+                        <div className="text-sm text-gray-400">Capture d'écran à venir</div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all z-10"
+                  aria-label="Image précédente"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all z-10"
+                  aria-label="Image suivante"
+                >
+                  <ChevronRight size={24} />
+                </button>
+
+                {/* Image Title Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <p className="text-white font-semibold text-sm">
+                    {screenshots[currentImageIndex].title}
+                  </p>
                 </div>
-                <p className="text-text-muted text-lg font-medium mb-6">
-                  Interface intuitive et moderne
-                </p>
-                <div className="bg-white rounded-2xl p-6 shadow-xl max-w-md mx-auto">
-                  <div className="space-y-3 text-left">
-                    <div className="h-3 bg-primary/20 rounded w-3/4"></div>
-                    <div className="h-3 bg-primary/10 rounded w-full"></div>
-                    <div className="h-3 bg-primary/10 rounded w-5/6"></div>
-                    <div className="h-20 bg-primary/5 rounded mt-4"></div>
-                  </div>
-                </div>
+              </div>
+
+              {/* Thumbnail Navigation */}
+              <div className="flex gap-2 mt-4 justify-center overflow-x-auto pb-2">
+                {screenshots.map((screenshot, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`flex-shrink-0 w-16 h-10 rounded-lg overflow-hidden border-2 transition-all ${
+                      currentImageIndex === index
+                        ? 'border-primary shadow-lg scale-105'
+                        : 'border-gray-300 opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    <img
+                      src={screenshot.src}
+                      alt={screenshot.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none'
+                        const fallback = e.target.nextElementSibling
+                        if (fallback) fallback.style.display = 'flex'
+                      }}
+                    />
+                    <div className="hidden w-full h-full items-center justify-center bg-primary/10 text-primary/40 text-xs font-bold">
+                      {index + 1}
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Image Counter */}
+              <div className="text-center mt-2">
+                <span className="text-sm text-text-muted">
+                  {currentImageIndex + 1} / {screenshots.length}
+                </span>
               </div>
             </div>
           </motion.div>
