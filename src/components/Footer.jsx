@@ -14,13 +14,13 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* L'application */}
+          {/* Le logiciel */}
           <div>
-            <h3 className="font-semibold text-white mb-4">L'application</h3>
+            <h3 className="font-semibold text-white mb-4">Le logiciel</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="https://www.aosrenovbtp.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  Découvrir l'app
+                  Découvrir le logiciel
                 </a>
               </li>
               <li>

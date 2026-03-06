@@ -7,7 +7,7 @@ const TrustBar = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const stats = [
-    { value: 127, suffix: '', label: "artisans utilisent déjà l'app", color: "text-primary" },
+    { value: 127, suffix: '', label: "artisans utilisent déjà le logiciel", color: "text-primary" },
     { value: 38100, suffix: '€', label: "versés à nos apporteurs", color: "text-success" },
     { value: 72, suffix: 'h', label: "délai de versement", color: "text-accent" },
     { value: 2, suffix: ' sem.', label: "essai 100% gratuit", color: "text-primary" },

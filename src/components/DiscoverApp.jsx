@@ -1,37 +1,43 @@
 import { motion } from 'framer-motion'
-import { FolderOpen, FileText, Receipt, Search, Bell, LayoutDashboard, ExternalLink } from 'lucide-react'
+import { FileText, Receipt, Send, Calendar, ArrowRight, Camera, ExternalLink, Star } from 'lucide-react'
 
 const DiscoverApp = () => {
   const features = [
     {
-      icon: FolderOpen,
-      title: "Gestion des dossiers sinistres",
-      description: "Centralisez tous vos dossiers clients et suivez leur avancement en temps réel."
-    },
-    {
       icon: FileText,
-      title: "Génération de devis professionnels",
-      description: "Créez des devis conformes en quelques clics, avec calcul automatique de la TVA."
+      title: "Devis rapides et professionnels",
+      description: "Réalisez vos devis en quelques minutes, sans Excel ni modèles compliqués.",
+      exclusive: false
     },
     {
       icon: Receipt,
-      title: "Facturation simplifiée",
-      description: "Transformez vos devis en factures et suivez vos paiements."
+      title: "Factures claires, paiements plus rapides",
+      description: "Créez des factures conformes et suivez facilement celles qui restent à encaisser.",
+      exclusive: false
     },
     {
-      icon: Search,
-      title: "Recherche d'experts et fournisseurs",
-      description: "Trouvez rapidement les contacts dont vous avez besoin pour vos chantiers."
+      icon: Send,
+      title: "Envoi et relances en 1 clic",
+      description: "Envoyez vos devis et factures par email. Relancez en un bouton, quand vous le décidez.",
+      exclusive: false
     },
     {
-      icon: Bell,
-      title: "Relances automatiques",
-      description: "Ne perdez plus de temps : l'app relance automatiquement vos clients et assurances."
+      icon: Calendar,
+      title: "Planning clair, zéro papier",
+      description: "Visualisez vos chantiers et interventions en un coup d'œil. Fini le planning dans la tête.",
+      exclusive: false
     },
     {
-      icon: LayoutDashboard,
-      title: "Tableau de bord complet",
-      description: "Visualisez votre activité, vos revenus et vos dossiers en un coup d'œil."
+      icon: ArrowRight,
+      title: "Devis → Facture en 1 clic",
+      description: "Transformez un devis accepté en facture en 1 clic, sans ressaisir les montants.",
+      exclusive: false
+    },
+    {
+      icon: Camera,
+      title: "Estimation via photo",
+      description: "Gagnez du temps en estimant certains chantiers à partir d'une photo.",
+      exclusive: true
     }
   ]
 
@@ -60,13 +66,13 @@ const DiscoverApp = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
-            L'APPLICATION
+            LE LOGICIEL
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-dark mb-4">
             Ce que l'artisan découvrira
           </h2>
           <p className="text-lg text-text-muted max-w-3xl mx-auto">
-            Une application conçue pour simplifier le quotidien des artisans du bâtiment.
+            Un logiciel conçu pour simplifier le quotidien des artisans du bâtiment.
           </p>
         </motion.div>
 
@@ -89,13 +95,26 @@ const DiscoverApp = () => {
                   className="bg-background-alt p-6 rounded-2xl hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 relative">
                       <Icon className="text-primary" size={24} />
+                      {feature.exclusive && (
+                        <div className="absolute -top-1 -right-1">
+                          <Star className="text-accent fill-accent" size={16} />
+                        </div>
+                      )}
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-text-dark mb-2">
-                        {feature.title}
-                      </h3>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <h3 className="text-xl font-bold text-text-dark">
+                          {feature.title}
+                        </h3>
+                        {feature.exclusive && (
+                          <span className="text-xs font-semibold text-accent bg-accent/10 px-2 py-1 rounded-full flex items-center gap-1">
+                            <Star className="fill-accent text-accent" size={12} />
+                            Exclusif
+                          </span>
+                        )}
+                      </div>
                       <p className="text-text-muted leading-relaxed">
                         {feature.description}
                       </p>
@@ -106,7 +125,7 @@ const DiscoverApp = () => {
             })}
           </motion.div>
 
-          {/* Right: App Mockup */}
+          {/* Right: Logiciel Mockup */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -151,7 +170,7 @@ const DiscoverApp = () => {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary hover:text-white transition-colors"
           >
-            Découvrir l'application
+            Découvrir le logiciel
             <ExternalLink size={20} />
           </motion.a>
         </motion.div>

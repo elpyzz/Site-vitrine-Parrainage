@@ -13,7 +13,7 @@ const HowItWorks = () => {
       number: 2,
       icon: Send,
       title: "Envoyez-nous son contact",
-      description: "Un simple message avec son prénom et numéro. On s'occupe de le contacter et de lui présenter l'application. Il bénéficie de 2 semaines d'essai gratuit."
+      description: "Un simple message avec son prénom et numéro. On s'occupe de le contacter et de lui présenter le logiciel. Il bénéficie de 2 semaines d'essai gratuit."
     },
     {
       number: 3,

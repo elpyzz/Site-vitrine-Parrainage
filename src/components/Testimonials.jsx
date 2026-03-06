@@ -8,7 +8,7 @@ const Testimonials = () => {
       name: "Karim",
       location: "Lyon",
       date: "Février 2026",
-      text: "J'ai parlé de l'appli à mon cousin électricien. Il a testé pendant 2 semaines, ça lui a plu, il a continué. J'ai reçu mon virement 3 jours après.",
+      text: "J'ai parlé du logiciel à mon cousin électricien. Il a testé pendant 2 semaines, ça lui a plu, il a continué. J'ai reçu mon virement 3 jours après.",
       gain: 300
     },
     {
@@ -24,7 +24,7 @@ const Testimonials = () => {
       name: "Maxime",
       location: "Marseille",
       date: "Février 2026",
-      text: "Mon voisin est plombier. Il cherchait de nouveaux clients, je lui ai passé le contact. L'essai l'a convaincu. Simple et efficace.",
+      text: "Mon voisin est plombier. Il passait trop de temps sur la paperasse. Je lui ai parlé du logiciel, il a testé pendant 2 semaines. Ça lui fait gagner du temps, il a continué. J'ai reçu mes 300€ rapidement.",
       gain: 300
     }
   ]

@@ -48,7 +48,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('discover-app')}
               className="text-text-dark hover:text-primary transition-colors font-medium"
             >
-              L'application
+              Le logiciel
             </button>
             <button
               onClick={() => scrollToSection('how-it-works')}

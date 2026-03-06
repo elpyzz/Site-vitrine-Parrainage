@@ -5,7 +5,7 @@ import { Copy, Check } from 'lucide-react'
 const HowToTalk = () => {
   const [copied, setCopied] = useState(false)
 
-  const message = `Salut [Prénom], je voulais te parler d'une appli pour les artisans du bâtiment. Ça permet de gérer tes devis, factures et dossiers clients facilement. Tu peux tester gratuitement pendant 2 semaines. Je t'envoie le lien si tu veux jeter un œil ?`
+  const message = `Salut [Prénom], je voulais te parler d'un logiciel pour les artisans du bâtiment. Ça permet de gérer tes devis, factures et planning facilement. Tu peux tester gratuitement pendant 2 semaines. Je t'envoie le lien si tu veux jeter un œil ?`
 
   const handleCopy = () => {
     navigator.clipboard.writeText(message)
@@ -28,7 +28,7 @@ const HowToTalk = () => {
             Comment en parler ?
           </h2>
           <p className="text-lg text-text-muted">
-            Pas besoin d'être commercial. Voici comment présenter simplement l'app.
+            Pas besoin d'être commercial. Voici comment présenter simplement le logiciel.
           </p>
         </motion.div>
 

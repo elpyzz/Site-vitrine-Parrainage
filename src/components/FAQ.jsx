@@ -16,7 +16,7 @@ const FAQ = () => {
     },
     {
       question: "Comment l'artisan est-il contacté ?",
-      answer: "Nous le contactons directement pour lui présenter l'application. Il bénéficie de 2 semaines d'essai gratuit sans engagement."
+      answer: "Nous le contactons directement pour lui présenter le logiciel. Il bénéficie de 2 semaines d'essai gratuit sans engagement."
     },
     {
       question: "Quand est-ce que je reçois ma prime ?",
