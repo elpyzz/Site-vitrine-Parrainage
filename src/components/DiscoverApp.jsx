@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { FileText, Receipt, Send, Calendar, ArrowRight, Camera, ExternalLink, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { FileText, Send, Calendar, ArrowRight, Camera, ExternalLink, Star, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 
 const DiscoverApp = () => {
@@ -13,15 +13,15 @@ const DiscoverApp = () => {
       exclusive: false
     },
     {
-      icon: Receipt,
-      title: "Factures claires, paiements plus rapides",
-      description: "Créez des factures conformes et suivez facilement celles qui restent à encaisser.",
-      exclusive: false
-    },
-    {
       icon: Send,
       title: "Envoi et relances en 1 clic",
       description: "Envoyez vos devis et factures par email. Relancez en un bouton, quand vous le décidez.",
+      exclusive: false
+    },
+    {
+      emoji: "✍️",
+      title: "Signature électronique",
+      description: "Ses clients signent les devis directement depuis leur téléphone — légalement valable, sans impression ni scanner.",
       exclusive: false
     },
     {
@@ -139,8 +139,8 @@ const DiscoverApp = () => {
                   className="bg-background-alt p-6 rounded-2xl hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 relative">
-                      <Icon className="text-primary" size={24} />
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 relative text-2xl">
+                      {feature.emoji ? <span>{feature.emoji}</span> : <Icon className="text-primary" size={24} />}
                       {feature.exclusive && (
                         <div className="absolute -top-1 -right-1">
                           <Star className="text-accent fill-accent" size={16} />
