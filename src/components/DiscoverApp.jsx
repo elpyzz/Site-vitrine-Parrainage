@@ -9,37 +9,31 @@ const DiscoverApp = () => {
     {
       icon: FileText,
       title: "Devis rapides et professionnels",
-      description: "Réalisez vos devis en quelques minutes, sans Excel ni modèles compliqués.",
+      description: "Devis en quelques minutes, sans Excel ni modèles compliqués.",
       exclusive: false
     },
     {
       icon: Send,
-      title: "Envoi et relances en 1 clic",
-      description: "Envoyez vos devis et factures par email. Relancez en un bouton, quand vous le décidez.",
-      exclusive: false
-    },
-    {
-      emoji: "✍️",
-      title: "Signature électronique",
-      description: "Ses clients signent les devis directement depuis leur téléphone — légalement valable, sans impression ni scanner.",
+      title: "Envoi, relances et signature électronique",
+      description: "Envoi par email, relances en 1 clic. Les clients signent les devis depuis leur téléphone — valable légalement.",
       exclusive: false
     },
     {
       icon: Calendar,
       title: "Planning clair, zéro papier",
-      description: "Visualisez vos chantiers et interventions en un coup d'œil. Fini le planning dans la tête.",
+      description: "Chantiers et interventions en un coup d'œil.",
       exclusive: false
     },
     {
       icon: ArrowRight,
-      title: "Devis → Facture en 1 clic",
-      description: "Transformez un devis accepté en facture en 1 clic, sans ressaisir les montants.",
+      title: "Devis → Facture et comptabilité simple",
+      description: "Devis accepté en facture en 1 clic. Comptabilité simple pour suivre l'essentiel.",
       exclusive: false
     },
     {
       icon: Camera,
       title: "Estimation via photo",
-      description: "Gagnez du temps en estimant certains chantiers à partir d'une photo.",
+      description: "Estimez certains chantiers à partir d'une photo.",
       exclusive: true
     }
   ]
